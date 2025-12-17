@@ -31,7 +31,7 @@ app.use(cors({
 
 // Tambahkan ini tepat di bawah app.use(cors...) 
 // Untuk menangani request "Preflight" yang bikin error tadi
-app.options('*', cors());
+app.options(/(.*)/, cors());
 app.use(express.json());
 app.use(router);
 
