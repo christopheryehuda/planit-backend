@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5000;
 db.authenticate()
     .then(() => {
         console.log('Database Connected...');
-        return db.sync(); // Membuat tabel otomatis jika belum ada
+        return db.sync({ alter: true }); // 'alter' artinya menyuruh database menyesuaikan struktur tabel // Membuat tabel otomatis jika belum ada
     })
     .catch(err => {
         console.error('Database connection error:', err);
