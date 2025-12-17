@@ -22,7 +22,16 @@ db.authenticate()
         console.error('Database connection error:', err);
     });
 
-app.use(cors());
+// Ganti baris app.use(cors()) yang lama dengan ini:
+app.use(cors({
+    origin: '*', // Mengizinkan semua domain (sementara untuk tes)
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+// Tambahkan ini tepat di bawah app.use(cors...) 
+// Untuk menangani request "Preflight" yang bikin error tadi
+app.options('*', cors());
 app.use(express.json());
 app.use(router);
 
