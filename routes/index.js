@@ -1,7 +1,6 @@
-// D:\planit-backend\routes\index.js
 const express = require('express');
-// Gunakan titik dua (..) untuk MUNDUR satu folder keluar dari 'routes'
 const { register, login } = require('../controllers/Auth'); 
+// Pastikan nama di sini 'createTask' (sesuai isi TaskController.js)
 const { getTasks, createTask } = require('../controllers/TaskController');
 
 const router = express.Router();
@@ -10,7 +9,8 @@ const router = express.Router();
 router.post('/register', register);
 router.post('/login', login);
 
-router.get('/tasks/:userId', getTasks);
-router.post('/tasks', createTasks);
+// --- Jalur Tasks ---
+router.get('/tasks', getTasks);
+router.post('/tasks', createTask); // Pastikan di sini juga 'createTask'
 
 module.exports = router;
