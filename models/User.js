@@ -4,16 +4,16 @@ const db = require('../config/database');
 const Users = db.define('users', {
     username: {
         type: DataTypes.STRING,
-        allowNull: false // Pakai allowNull
+        allowNull: false
     },
     email: {
         type: DataTypes.STRING,
-        allowNull: false, // Pakai allowNull
-        unique: true
+        allowNull: false,
+        unique: true // Ini supaya 1 email tidak bisa daftar 2 kali
     },
     password: {
         type: DataTypes.STRING,
-        allowNull: false // Pakai allowNull
+        allowNull: false
     }
 }, {
     freezeTableName: true
