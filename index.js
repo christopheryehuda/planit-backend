@@ -6,7 +6,7 @@ const router = require('./routes/index');
 
 // Kita panggil model di sini supaya tabel otomatis terbuat saat sync
 const Users = require('./models/User'); 
-const Tasks = require('./models/Task'); 
+const Tasks = require('./models/Task');
 
 dotenv.config();
 const app = express();
