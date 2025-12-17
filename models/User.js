@@ -19,4 +19,4 @@ const Users = db.define('users', {
     freezeTableName: true
 });
 
-module.exports = User;
+module.exports = Users;
