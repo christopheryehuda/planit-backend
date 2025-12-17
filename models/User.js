@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const db = require('../config/database');
+const db = require('../config/db');
 
 const Users = db.define('users', {
     username: {
@@ -19,4 +19,4 @@ const Users = db.define('users', {
     freezeTableName: true
 });
 
-module.exports = Users;
+module.exports = User;
